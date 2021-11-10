@@ -1,0 +1,26 @@
+version: "3.7"
+
+
+# services:
+#   docs:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#       target: dev
+#     ports:
+#       - 8000:8000
+#     volumes:
+#       - ./:/app
+
+services:
+  finance_api:
+    container_name: finance_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000:8000
+    environment:
+      - NODE_ENV=development
+
+
